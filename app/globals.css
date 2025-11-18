@@ -42,4 +42,7 @@ body {
   color: var(--foreground);
   font-family: "FC Minimal Regular", Arial, Helvetica, sans-serif;
   font-size: 2rem;
+
+  overflow-x: hidden;
+  user-select: none;
 }
