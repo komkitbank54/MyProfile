@@ -26,12 +26,12 @@ export default function Navbar() {
                     isFixed ? "fixed top-0 left-0 right-0" : "relative"
                 }  bg-[#041443] shadow-lg z-50`}
             >
-                <div className="flex justify-between items-center px-3 text-[#8cc5f7] active:text-[#3b8fda]">
-                    <img src="/icon/about-icon.png" alt="About" className="w-5 h-5 object-contain" />
-                    <img src="/icon/skills-icon.png" alt="About" className="w-5 h-5 object-contain" />
-                    <img src="/icon/exp-icon.png" alt="About" className="w-5 h-5 object-contain" />
-                    <div>Portfolio</div>
-                    <div>Resume</div>
+                <div className="flex justify-between items-center px-4 py-2 text-[#8cc5f7] active:text-[#3b8fda]">
+                    <img src="/icon/about-icon.png" alt="About" className="w-7 h-7 object-contain" />
+                    <img src="/icon/skills-icon.png" alt="About" className="w-7 h-7 object-contain" />
+                    <img src="/icon/exp-icon.png" alt="About" className="w-7 h-7 object-contain" />
+                    <img src="/icon/port-icon.png" alt="About" className="w-7 h-7 object-contain" />
+                    <img src="/icon/resume-icon.png" alt="About" className="w-7 h-7 object-contain" />
                 </div>
             </nav>
         </div>
