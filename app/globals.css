@@ -1,16 +1,9 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "FC Minimal Regular";
-  src: url("/fonts/FC Minimal Regular.ttf") format("truetype");
+  font-family: "CutePixel";
+  src: url("/fonts/CutePixel.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "FC Minimal Bold";
-  src: url("/fonts/FC Minimal Bold.ttf") format("truetype");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -34,13 +27,13 @@
 }
 
 body {
-  background: url("/sky-bg.png");
-  background-size: 100% 17%;
-  background-attachment: fixed;
+  background: url("/sky-pixel-bg.png");
+  background-size: 100% 1.8%;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   
   color: var(--foreground);
-  font-family: "FC Minimal Regular", Arial, Helvetica, sans-serif;
+  font-family: "CutePixel", Arial, Helvetica, sans-serif;
   font-size: 2rem;
 
   overflow-x: hidden;
