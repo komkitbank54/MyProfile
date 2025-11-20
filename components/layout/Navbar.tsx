@@ -17,8 +17,8 @@ export default function Navbar() {
     return (
         <div className="">
             <div className="h-[17vh] flex justify-center">
-                <div className="w-50 h-50 bg-[#041443] rounded-full flex justify-center shadow-2xl">
-                    <div className="w-48 h-48 bg-[#253f77] rounded-full mt-1"></div>
+                <div className="w-[20vh] h-[20vh] bg-[#041443] rounded-full flex justify-center shadow-2xl">
+                    <div className="w-[19.2vh] h-[19.2vh] bg-[#253f77] rounded-full mt-1"></div>
                 </div>
             </div>
             <nav

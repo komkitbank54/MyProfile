@@ -28,8 +28,8 @@
 
 body {
   background: url("/sky-pixel-bg.png");
-  background-size: 100% 1.8%;
-  background-attachment: scroll;
+  background-size: 100% 18%;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   
   color: var(--foreground);
