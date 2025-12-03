@@ -1,42 +1,37 @@
-import { useState, useEffect, RefObject } from "react";
+import { useState, useEffect, RefObject } from 'react';
 
-export function useScrollSpy(
-    containerRef: RefObject<HTMLElement>,
-    sectionIds: string[]
-) {
-    const [activeId, setActiveId] = useState<string>(sectionIds[0]);
+export const useScrollSpy = (
+  containerRef: RefObject<HTMLElement>,
+  sectionIds: string[],
+  offset: number = 200
+) => {
+  const [activeId, setActiveId] = useState<string>(sectionIds[0]);
 
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveId(entry.target.id);
-                    }
-                });
-            },
-            {
-                root: container,
-                threshold: 0.5,
-            }
-        );
+    const handleScroll = () => {
+      const scrollPosition = container.scrollTop + offset;
 
-        sectionIds.forEach((id) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (!element) continue;
 
-        return () => {
-            sectionIds.forEach((id) => {
-                const element = document.getElementById(id);
-                if (element) observer.unobserve(element);
-            });
-        };
+        const top = element.offsetTop;
+        const height = element.offsetHeight;
 
-    }, [containerRef, sectionIds]);
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          setActiveId(id);
+          break;
+        }
+      }
+    };
 
-    return activeId
-}
+    container.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [containerRef, sectionIds, offset]);
+
+  return activeId;
+};
